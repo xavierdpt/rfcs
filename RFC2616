@@ -1,27 +1,4 @@
-
-
-
-
-
-
-Network Working Group                                      R. Fielding
-Request for Comments: 2616                                   UC Irvine
-Obsoletes: 2068                                              J. Gettys
-Category: Standards Track                                   Compaq/W3C
-                                                              J. Mogul
-                                                                Compaq
-                                                            H. Frystyk
-                                                               W3C/MIT
-                                                           L. Masinter
-                                                                 Xerox
-                                                              P. Leach
-                                                             Microsoft
-                                                        T. Berners-Lee
-                                                               W3C/MIT
-                                                             June 1999
-
-
-                Hypertext Transfer Protocol -- HTTP/1.1
+RFC2616 Hypertext Transfer Protocol -- HTTP/1.1
 
 Status of this Memo
 

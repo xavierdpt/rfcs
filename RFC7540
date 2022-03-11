@@ -1,19 +1,4 @@
-
-
-
-
-
-
-Internet Engineering Task Force (IETF)                         M. Belshe
-Request for Comments: 7540                                         BitGo
-Category: Standards Track                                        R. Peon
-ISSN: 2070-1721                                              Google, Inc
-                                                         M. Thomson, Ed.
-                                                                 Mozilla
-                                                                May 2015
-
-
-             Hypertext Transfer Protocol Version 2 (HTTP/2)
+RFC7540 Hypertext Transfer Protocol Version 2 (HTTP/2)
 
 Abstract
 

@@ -1,27 +1,6 @@
-
-
-
-
-
-
-Network Working Group                                       E. Rescorla
-Request for Comments: 2818                                   RTFM, Inc.
-Category: Informational                                        May 2000
-
-
-                             HTTP Over TLS
+RFC2818 HTTP Over TLS
 
 Status of this Memo
-
-   This memo provides information for the Internet community.  It does
-   not specify an Internet standard of any kind.  Distribution of this
-   memo is unlimited.
-
-Copyright Notice
-
-   Copyright (C) The Internet Society (2000).  All Rights Reserved.
-
-Abstract
 
    This memo describes how to use TLS to secure HTTP connections over
    the Internet. Current practice is to layer HTTP over SSL (the
@@ -30,35 +9,6 @@ Abstract
    documents that practice using TLS. A companion document describes a
    method for using HTTP/TLS over the same port as normal HTTP
    [RFC2817].
-
-Table of Contents
-
-   1. Introduction  . . . . . . . . . . . . . . . . . . . . . . 2
-   1.1. Requirements Terminology  . . . . . . . . . . . . . . . 2
-   2. HTTP Over TLS . . . . . . . . . . . . . . . . . . . . . . 2
-   2.1. Connection Initiation . . . . . . . . . . . . . . . . . 2
-   2.2. Connection Closure  . . . . . . . . . . . . . . . . . . 2
-   2.2.1. Client Behavior . . . . . . . . . . . . . . . . . . . 3
-   2.2.2. Server Behavior . . . . . . . . . . . . . . . . . . . 3
-   2.3. Port Number . . . . . . . . . . . . . . . . . . . . . . 4
-   2.4. URI Format  . . . . . . . . . . . . . . . . . . . . . . 4
-   3. Endpoint Identification . . . . . . . . . . . . . . . . . 4
-   3.1. Server Identity . . . . . . . . . . . . . . . . . . . . 4
-   3.2. Client Identity . . . . . . . . . . . . . . . . . . . . 5
-   References . . . . . . . . . . . . . . . . . . . . . . . . . 6
-   Security Considerations  . . . . . . . . . . . . . . . . . . 6
-   Author's Address . . . . . . . . . . . . . . . . . . . . . . 6
-   Full Copyright Statement . . . . . . . . . . . . . . . . . . 7
-
-
-
-
-
-
-Rescorla                     Informational                      [Page 1]
-
-RFC 2818                     HTTP Over TLS                      May 2000
-
 
 1.  Introduction
 
@@ -108,14 +58,6 @@ RFC 2818                     HTTP Over TLS                      May 2000
    "premature close") MUST NOT reuse that session.  Note that a
    premature close does not call into question the security of the data
    already received, but simply indicates that subsequent data might
-
-
-
-Rescorla                     Informational                      [Page 2]
-
-RFC 2818                     HTTP Over TLS                      May 2000
-
-
    have been truncated. Because TLS is oblivious to HTTP
    request/response boundaries, it is necessary to examine the HTTP data
    itself (specifically the Content-Length header) to determine whether
@@ -165,13 +107,6 @@ RFC 2818                     HTTP Over TLS                      May 2000
    Servers SHOULD be willing to resume TLS sessions closed in this
    fashion.
 
-
-
-Rescorla                     Informational                      [Page 3]
-
-RFC 2818                     HTTP Over TLS                      May 2000
-
-
    Implementation note: In HTTP implementations which do not use
    persistent connections, the server ordinarily expects to be able to
    signal end of data by closing the connection. When Content-Length is
@@ -219,15 +154,6 @@ RFC 2818                     HTTP Over TLS                      May 2000
    dynamic but the client knows the certificate that the server will
    present.) In such cases, it is important to narrow the scope of
    acceptable certificates as much as possible in order to prevent man
-
-
-
-
-Rescorla                     Informational                      [Page 4]
-
-RFC 2818                     HTTP Over TLS                      May 2000
-
-
    in the middle attacks.  In special cases, it may be appropriate for
    the client to simply ignore the server's identity, but it must be
    understood that this leaves the connection open to active attack.
@@ -276,120 +202,12 @@ RFC 2818                     HTTP Over TLS                      May 2000
    server has such knowledge (typically from some source external to
    HTTP or TLS) it SHOULD check the identity as described above.
 
+   [RFC2459] "Internet Public Key Infrastructure: Part I: X.509 Certificate and CRL Profile"
 
+   [RFC2616] "Hypertext Transfer Protocol, HTTP/1.1"
 
+   [RFC2119] "Key Words for use in RFCs to indicate Requirement Levels"
 
-Rescorla                     Informational                      [Page 5]
-
-RFC 2818                     HTTP Over TLS                      May 2000
+   [RFC2246] The TLS Protocol
 
-
-References
-
-   [RFC2459] Housley, R., Ford, W., Polk, W. and D. Solo, "Internet
-             Public Key Infrastructure: Part I: X.509 Certificate and
-             CRL Profile", RFC 2459, January 1999.
-
-   [RFC2616] Fielding, R., Gettys, J., Mogul, J., Frystyk, H., Masinter,
-             L., Leach, P. and T. Berners-Lee, "Hypertext Transfer
-             Protocol, HTTP/1.1", RFC 2616, June 1999.
-
-   [RFC2119] Bradner, S., "Key Words for use in RFCs to indicate
-             Requirement Levels", BCP 14, RFC 2119, March 1997.
-
-   [RFC2246] Dierks, T. and C. Allen, "The TLS Protocol", RFC 2246,
-             January 1999.
-
-   [RFC2817] Khare, R. and S. Lawrence, "Upgrading to TLS Within
-             HTTP/1.1", RFC 2817, May 2000.
-
-Security Considerations
-
-   This entire document is about security.
-
-Author's Address
-
-   Eric Rescorla
-   RTFM, Inc.
-   30 Newell Road, #16
-   East Palo Alto, CA 94303
-
-   Phone: (650) 328-8631
-   EMail: ekr@rtfm.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Rescorla                     Informational                      [Page 6]
-
-RFC 2818                     HTTP Over TLS                      May 2000
-
-
-Full Copyright Statement
-
-   Copyright (C) The Internet Society (2000).  All Rights Reserved.
-
-   This document and translations of it may be copied and furnished to
-   others, and derivative works that comment on or otherwise explain it
-   or assist in its implementation may be prepared, copied, published
-   and distributed, in whole or in part, without restriction of any
-   kind, provided that the above copyright notice and this paragraph are
-   included on all such copies and derivative works.  However, this
-   document itself may not be modified in any way, such as by removing
-   the copyright notice or references to the Internet Society or other
-   Internet organizations, except as needed for the purpose of
-   developing Internet standards in which case the procedures for
-   copyrights defined in the Internet Standards process must be
-   followed, or as required to translate it into languages other than
-   English.
-
-   The limited permissions granted above are perpetual and will not be
-   revoked by the Internet Society or its successors or assigns.
-
-   This document and the information contained herein is provided on an
-   "AS IS" basis and THE INTERNET SOCIETY AND THE INTERNET ENGINEERING
-   TASK FORCE DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING
-   BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION
-   HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF
-   MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
-
-Acknowledgement
-
-   Funding for the RFC Editor function is currently provided by the
-   Internet Society.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Rescorla                     Informational                      [Page 7]
-
+   [RFC2817] Upgrading to TLS Within HTTP/1.1

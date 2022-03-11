@@ -1,17 +1,4 @@
-
-
-
-
-
-
-Network Working Group                                           R. Khare
-Request for Comments: 2817                     4K Associates / UC Irvine
-Updates: 2616                                                S. Lawrence
-Category: Standards Track                          Agranat Systems, Inc.
-                                                                May 2000
-
-
-                    Upgrading to TLS Within HTTP/1.1
+RFC2817 Upgrading to TLS Within HTTP/1.1
 
 Status of this Memo
 
